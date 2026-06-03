@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Jiu-jitsu.ru — Джиу-джитсу в России</title>
+    
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/light-theme.css" id="theme-style">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <span class="logo__icon">🥋</span>
+                <span class="logo__text">Jiu-jitsu.ru</span>
+            </div>
+            
+            <!-- Кнопка переключения темы -->
+            <button class="theme-toggle" id="theme-toggle" aria-label="Сменить тему">
+                🌙
+            </button>
+        </div>
+    </header>
+
+    <!-- Навигация -->
+    <nav class="nav">
+        <div class="container nav__container">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Главная</a></li>
+                <li class="nav__item"><a href="#" class="nav__link" id="clubs-link">Клубы</a></li>
+                <li class="nav__item"><a href="#" class="nav__link" id="tournaments-link">Турниры</a></li>
+                <li class="nav__item"><a href="#" class="nav__link" id="knowledge-link">База знаний</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="main">
+        <div class="container">
+            
+            <!-- Герой-секция -->
+            <section class="hero">
+                <h1 class="hero__title">Джиу-джитсу в России</h1>
+                <p class="hero__subtitle">Развитие бразильского джиу-джитсу: от новичка до чёрного пояса</p>
+                <button class="btn btn-primary" id="discover-btn">Найти клуб рядом →</button>
+            </section>
+
+            <!-- Секция: Топ-новость -->
+            <section class="section">
+                <h2 class="section__title">🔥 Топ-новость</h2>
+                <div class="news-card">
+                    <h3 class="news-card__title">Россиянин взял золото на IBJJF — подробности</h3>
+                    <p class="news-card__date">15 мая 2026</p>
+                    <p class="news-card__content">В финале Absolute Division российский спортсмен Михаил Волков одержал победу над бразильцем. Это первое золото России в данной категории за последние 5 лет.</p>
+                    <button class="btn btn-outline read-more-btn" data-news="ibjjf">Подробнее</button>
+                </div>
+            </section>
+
+            <!-- Секция: Ближайшие турниры -->
+            <section class="section">
+                <h2 class="section__title">📅 Ближайшие турниры</h2>
+                <div class="tournaments-grid" id="tournaments-container">
+                    <!-- Турниры загружаются через JS -->
+                    <div class="tournament-card">
+                        <h3>Открытый кубок Москвы</h3>
+                        <p>📅 10 июня 2026</p>
+                        <p>📍 Москва, СК "Динамо"</p>
+                        <button class="btn btn-outline register-trigger">Регистрация</button>
+                    </div>
+                    <div class="tournament-card">
+                        <h3>Сибирский гран-при</h3>
+                        <p>📅 25 июня 2026</p>
+                        <p>📍 Новосибирск, Арена</p>
+                        <button class="btn btn-outline register-trigger">Регистрация</button>
+                    </div>
+                    <div class="tournament-card">
+                        <h3>Кубок Санкт-Петербурга</h3>
+                        <p>📅 5 июля 2026</p>
+                        <p>📍 СПб, ДС "Юбилейный"</p>
+                        <button class="btn btn-outline register-trigger">Регистрация</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция: Клуб месяца (с видео на Rutube) -->
+            <section class="section">
+                <h2 class="section__title">🏆 Клуб месяца</h2>
+                <div class="club-month">
+                    <div class="club-month__info">
+                        <h3>Gracie Barra Moscow</h3>
+                        <p>📍 ул. Тверская, 15, Москва</p>
+                        <p>⭐ 4.9 на основе 127 отзывов</p>
+                        <p>👨‍🏫 Тренер: Андрей Соколов, чёрный пояс 3 дан</p>
+                        <button class="btn btn-primary" id="club-details-btn">Подробнее о клубе</button>
+                    </div>
+                    <div class="club-month__video">
+                        <iframe src="https://rutube.ru/play/embed/0b3a4f5e6c7d8e9f0a1b2c3d4e5f6a7b" 
+                                title="Интервью с тренером"
+                                frameborder="0"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen>
+                        </iframe>
+                        <p class="video-caption">Интервью с тренером клуба месяца</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция: Пример JS-приложения 1 (добавление клуба) -->
+            <section class="section" id="add-club-section">
+                <h2 class="section__title">➕ Предложить клуб</h2>
+                <p class="section__subtitle">Помогите нам расширить карту клубов — добавьте свою секцию</p>
+                
+                <form id="add-club-form" class="club-form">
+                    <div class="form__group">
+                        <label for="club-name">Название клуба *</label>
+                        <input type="text" id="club-name" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="club-address">Адрес *</label>
+                        <input type="text" id="club-address" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="club-price">Цена (₽/месяц)</label>
+                        <input type="number" id="club-price" value="3000">
+                    </div>
+                    <div class="form__group">
+                        <label>
+                            <input type="checkbox" id="club-child"> Есть детские группы
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Добавить клуб</button>
+                </form>
+
+                <div id="clubs-list" class="clubs-grid">
+                    <!-- Список добавленных клубов появится здесь -->
+                    <div class="info-message">Добавьте первый клуб через форму выше</div>
+                </div>
+            </section>
+
+            <!-- Секция: JS-приложение 2 (расчёт цены регистрации) -->
+            <section class="section" id="registration-section">
+                <h2 class="section__title">📝 Регистрация на турнир</h2>
+                <p class="section__subtitle">Рассчитайте стоимость участия со скидками</p>
+                
+                <form id="reg-form" class="reg-form">
+                    <div class="form__group">
+                        <label for="fighter-name">Имя спортсмена *</label>
+                        <input type="text" id="fighter-name" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="fighter-belt">Пояс</label>
+                        <select id="fighter-belt">
+                            <option value="white">Белый</option>
+                            <option value="blue">Синий</option>
+                            <option value="purple">Фиолетовый</option>
+                            <option value="brown">Коричневый</option>
+                            <option value="black">Чёрный</option>
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <label>
+                            <input type="checkbox" id="early-reg"> Ранняя регистрация (скидка 30%)
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label>
+                            <input type="checkbox" id="is-child"> Детская категория (до 16 лет, скидка 50%)
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label>
+                            <input type="checkbox" id="is-member"> Член клуба-партнёра (скидка 10%)
+                        </label>
+                    </div>
+                    
+                    <div class="price-preview" id="price-preview">
+                        Базовая цена: 3000 ₽
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Рассчитать и подать заявку</button>
+                </form>
+                
+                <div id="registration-result" class="reg-result" style="display: none;"></div>
+            </section>
+
+            <!-- Секция: JS-приложение 3 (новости с API) -->
+            <section class="section">
+                <h2 class="section__title">📰 Новости джиу-джитсу</h2>
+                <button class="btn btn-primary" id="load-news-btn">Загрузить свежие новости</button>
+                <div id="news-container" class="news-grid">
+                    <div class="info-message">Нажмите на кнопку, чтобы загрузить новости</div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>Jiu-jitsu.ru — развитие джиу-джитсу в России</p>
+            <p>Теньчиков Кирилл, группа 02141</p>
+            <p>© 2026 Все права защищены</p>
+        </div>
+    </footer>
+
+    <!-- Подключаем JavaScript -->
+    <script src="js/theme.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/app1.js"></script>
+    <script src="js/app2.js"></script>
+    <script src="js/app3.js"></script>
+</body>
+</html>

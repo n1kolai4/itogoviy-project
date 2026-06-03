@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Турниры по джиу-джитсу в России — Jiu-jitsu.ru</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/light-theme.css" id="theme-style">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <span class="logo__icon">🥋</span>
+                <span class="logo__text">Jiu-jitsu.ru</span>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Сменить тему">🌙</button>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container nav__container">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                <li class="nav__item"><a href="clubs.html" class="nav__link">Клубы</a></li>
+                <li class="nav__item"><a href="tournaments.html" class="nav__link nav__link--active">Турниры</a></li>
+                <li class="nav__item"><a href="knowledge.html" class="nav__link">База знаний</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            
+            <section class="hero">
+                <h1 class="hero__title">🏆 Турниры по джиу-джитсу</h1>
+                <p class="hero__subtitle">Участвуйте в соревнованиях и повышайте свой уровень</p>
+            </section>
+
+            <section class="section">
+                <h2 class="section__title">📅 Календарь турниров на 2026 год</h2>
+                <div class="tournaments-table">
+                    <table class="tournaments-calendar">
+                        <thead>
+                            <tr><th>Дата</th><th>Название турнира</th><th>Город</th><th>Статус</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>10 июня</td><td>Открытый кубок Москвы</td><td>Москва</td><td>✅ Регистрация открыта</td></tr>
+                            <tr><td>25 июня</td><td>Сибирский гран-при</td><td>Новосибирск</td><td>✅ Регистрация открыта</td></tr>
+                            <tr><td>5 июля</td><td>Кубок Санкт-Петербурга</td><td>Санкт-Петербург</td><td>⏳ Скоро</td></tr>
+                            <tr><td>15 августа</td><td>Чемпионат России</td><td>Екатеринбург</td><td>⏳ Скоро</td></tr>
+                            <tr><td>20 сентября</td><td>Кубок Кавказа</td><td>Краснодар</td><td>⏳ Скоро</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="section" id="registration-section">
+                <h2 class="section__title">📝 Регистрация на турнир</h2>
+                <p class="section__subtitle">Рассчитайте стоимость участия со скидками</p>
+                
+                <form id="reg-form" class="reg-form">
+                    <div class="form__group">
+                        <label for="fighter-name">Имя спортсмена *</label>
+                        <input type="text" id="fighter-name" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="fighter-belt">Пояс</label>
+                        <select id="fighter-belt">
+                            <option value="white">Белый</option>
+                            <option value="blue">Синий</option>
+                            <option value="purple">Фиолетовый</option>
+                            <option value="brown">Коричневый</option>
+                            <option value="black">Чёрный</option>
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <label>
+                            <input type="checkbox" id="early-reg"> Ранняя регистрация (скидка 30%)
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label>
+                            <input type="checkbox" id="is-child"> Детская категория (до 16 лет, скидка 50%)
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label>
+                            <input type="checkbox" id="is-member"> Член клуба-партнёра (скидка 10%)
+                        </label>
+                    </div>
+                    
+                    <div class="price-preview" id="price-preview">
+                        Базовая цена: 3000 ₽
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Рассчитать и подать заявку</button>
+                </form>
+                
+                <div id="registration-result" class="reg-result" style="display: none;"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>Jiu-jitsu.ru — развитие джиу-джитсу в России</p>
+            <p>Теньчиков Кирилл, группа 02141</p>
+            <p>© 2026 Все права защищены</p>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/app2.js"></script>
+</body>
+</html>
