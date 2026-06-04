@@ -2,10 +2,18 @@ const addClubForm = document.getElementById('add-club-form');
 const clubsContainer = document.getElementById('clubs-list');
 let clubs = [];
 
+const initialClubs = [
+    { id: 1, name: "Gracie Barra Moscow", address: "ул. Тверская, 15, Москва", price: 5000, hasChildGroup: true },
+    { id: 2, name: "CheckMat Russia", address: "ул. Ленина, 10, Санкт-Петербург", price: 4500, hasChildGroup: true },
+    { id: 3, name: "Atos Moscow", address: "пр. Мира, 25, Москва", price: 5500, hasChildGroup: false }
+];
+
 function displayClub(club) {
     const clubCard = document.createElement('div');
     clubCard.className = 'club-card';
     clubCard.setAttribute('data-id', club.id);
+    clubCard.setAttribute('data-name', club.name.toLowerCase());
+    clubCard.setAttribute('data-child', club.hasChildGroup);
     
     clubCard.innerHTML = `
         <h3>${escapeHtml(club.name)}</h3>
@@ -26,10 +34,23 @@ function deleteClub(clubId) {
     const clubElement = document.querySelector(`.club-card[data-id="${clubId}"]`);
     if (clubElement) clubElement.remove();
     localStorage.setItem('clubs', JSON.stringify(clubs));
+}
+
+function filterClubs() {
+    const searchText = document.getElementById('search-club')?.value.toLowerCase() || '';
+    const childFilter = document.getElementById('filter-child')?.value || 'all';
     
-    if (clubs.length === 0) {
-        clubsContainer.innerHTML = '<div class="info-message">Добавьте первый клуб через форму выше</div>';
-    }
+    const allCards = document.querySelectorAll('.club-card');
+    
+    allCards.forEach(card => {
+        const name = card.getAttribute('data-name') || '';
+        const hasChild = card.getAttribute('data-child') === 'true';
+        
+        const matchesSearch = name.includes(searchText);
+        const matchesChild = childFilter === 'all' || (childFilter === 'yes' && hasChild);
+        
+        card.style.display = matchesSearch && matchesChild ? 'block' : 'none';
+    });
 }
 
 function escapeHtml(str) {
@@ -73,23 +94,23 @@ if (addClubForm) {
 
 function loadSavedClubs() {
     const savedClubs = localStorage.getItem('clubs');
-    if (savedClubs) {
+    if (savedClubs && JSON.parse(savedClubs).length > 0) {
         clubs = JSON.parse(savedClubs);
         if (clubsContainer.querySelector('.info-message')) {
             clubsContainer.innerHTML = '';
         }
         clubs.forEach(club => displayClub(club));
+    } else {
+        clubs = [...initialClubs];
+        clubs.forEach(club => displayClub(club));
+        localStorage.setItem('clubs', JSON.stringify(clubs));
     }
 }
 
 loadSavedClubs();
 
-// Кнопка "Подробнее о клубе"
-const clubDetailsBtn = document.getElementById('club-details-btn');
+const searchInput = document.getElementById('search-club');
+const filterSelect = document.getElementById('filter-child');
 
-if (clubDetailsBtn) {
-    clubDetailsBtn.addEventListener('click', () => {
-        // Ссылка на реальный сайт клуба
-        window.open('https://gojirajj.ru/#branches', '_blank');
-    });
-}
+if (searchInput) searchInput.addEventListener('input', filterClubs);
+if (filterSelect) filterSelect.addEventListener('change', filterClubs);
