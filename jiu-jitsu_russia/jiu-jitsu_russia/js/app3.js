@@ -46,9 +46,9 @@ function displayNews(articles) {
 
 function showFallbackNews() {
     const fallbackNews = [
-        { title: "Российский джиу-джитсу развивается", description: "Количество клубов выросло в 3 раза за 5 лет", url: "#", publishedAt: null },
-        { title: "Чемпионат России 2026", description: "Соревнования пройдут в Москве", url: "#", publishedAt: null },
-        { title: "Интервью с чемпионом", description: "О пути в спорте и планах на будущее", url: "#", publishedAt: null }
+        { title: "Российский джиу-джитсу развивается", description: "Россия и Словакия заключили соглашение о развитии бразильского джиу-джитсу", url: "https://www.sovsport.ru/dzhiu-dzhitsu/news/rossiya-i-slovakiya-zaklyuchili-soglashenie-o-razvitii-brazilskogo-dzhiu-dzhitsu" },
+        { title: "Чемпионат России 2026", description: "Голливудский актер Том Харди мог стать противником Царукяна", url: "https://sport24.ru/mma/news-814152-gollivudskiy-akter-tom-khardi-mog-stat-protivnikom-tsarukyana" },
+        { title: "Интервью с чемпионом", description: "Спортсмены Иркутской области завоевали три медали на первенстве России и всероссийских соревнованиях по джиу-джитсу", url: "https://www.38rus.com/more/111120" }
     ];
     displayNews(fallbackNews);
 }

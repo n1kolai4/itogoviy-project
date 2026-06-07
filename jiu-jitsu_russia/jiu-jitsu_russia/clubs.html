@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Клубы джиу-джитсу в России — Jiu-jitsu.ru</title>
-    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥋</text></svg>">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/light-theme.css" id="theme-style">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
+
 <body>
 
     <header class="header">
@@ -27,22 +32,25 @@
                 <li class="nav__item"><a href="clubs.html" class="nav__link nav__link--active">Клубы</a></li>
                 <li class="nav__item"><a href="tournaments.html" class="nav__link">Турниры</a></li>
                 <li class="nav__item"><a href="knowledge.html" class="nav__link">База знаний</a></li>
+                <li class="nav__item"><a href="contacts.html" class="nav__link" id="knowledge-link">Контакты</a></li>
+                <li class="nav__item"><a href="gallery.html" class="nav__link" id="knowledge-link">Галерея</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="main">
         <div class="container">
-            
+
             <section class="hero">
                 <h1 class="hero__title">🥋 Клубы джиу-джитсу в России</h1>
                 <p class="hero__subtitle">Найдите ближайшую секцию и начните тренироваться уже сегодня</p>
             </section>
 
-            <section class="form__group">
+            <section class="section">
                 <h2 class="section__title">🔍 Поиск клубов</h2>
-                <div class="form__group">
+                <div class="filters">
                     <input type="text" id="search-club" placeholder="Поиск по названию..." class="filter-input">
+                    <input type="text" id="search-city" placeholder="Поиск по городу..." class="filter-input">
                     <select id="filter-child" class="filter-select">
                         <option value="all">Все клубы</option>
                         <option value="yes">Только с детскими группами</option>
@@ -51,14 +59,9 @@
             </section>
 
             <section class="section">
-                <h2 class="section__title">📍 Карта клубов</h2>
-                <div class="map-placeholder">
-                    <div class="map-info">
-                        <p>🗺️ Интерактивная карта клубов</p>
-                        <p>📍 Москва: 15 клубов | 📍 СПб: 8 клубов | 📍 Новосибирск: 5 клубов</p>
-                        <p class="map-note">* Полная карта будет доступна в следующей версии</p>
-                    </div>
-                </div>
+                <h2 class="section__title">📍 Наши клубы на карте</h2>
+                <!-- Это контейнер, в котором будет отображаться карта -->
+                <div id="club-map"></div>
             </section>
 
             <section class="section">
@@ -104,5 +107,7 @@
     <script src="js/theme.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/clubs-page.js"></script>
+    <script src="js/map.js"></script>
 </body>
+
 </html>
