@@ -7,7 +7,7 @@ const galleryLinks = [
     { title: "Кубок Санкт-Петербурга", category: "tournament", icon: "🏆", link: "https://vk.com/wall-172715980_724" },
     
     // Тренировки
-    { title: "Подготвка к Чемпионату и Первенству Европы", category: "training", icon: "🥋", link: "https://vk.com/wall-172715980_1344" },
+    { title: "Подготовка к Чемпионату и Первенству Европы", category: "training", icon: "🥋", link: "https://vk.com/wall-172715980_1344" },
     { title: "Активная подготовка к Чемпионату и Первенству мира в Тайланде", category: "training", icon: "🥋", link: "https://vk.com/wall-172715980_873" },
     { title: "Георгий Владимирович Куковеров: работа над мастерством в Сибири ", category: "training", icon: "🥋", link: "https://vk.com/wall-172715980_860" },
     

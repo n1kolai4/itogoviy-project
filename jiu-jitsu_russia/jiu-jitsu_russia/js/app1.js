@@ -93,13 +93,3 @@ if (clubDetailsBtn) {
         window.open('https://gojirajj.ru/#branches', '_blank');
     });
 }
-
-// Находим кнопку на главной странице
-const discoverBtn = document.getElementById('discover-btn');
-
-if (discoverBtn) {
-    discoverBtn.addEventListener('click', () => {
-        // Переход на страницу со списком клубов
-        window.location.href = 'clubs.html';
-    });
-}
