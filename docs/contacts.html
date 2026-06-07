@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — Jiu-jitsu.ru</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥋</text></svg>">
+
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/light-theme.css" id="theme-style">
+    <link rel="stylesheet" href="css/contacts.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <span class="logo__icon">🥋</span>
+                <span class="logo__text">Jiu-jitsu.ru</span>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Сменить тему">🌙</button>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container nav__container">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                <li class="nav__item"><a href="clubs.html" class="nav__link">Клубы</a></li>
+                <li class="nav__item"><a href="tournaments.html" class="nav__link">Турниры</a></li>
+                <li class="nav__item"><a href="knowledge.html" class="nav__link">База знаний</a></li>
+                <li class="nav__item"><a href="contacts.html" class="nav__link" id="knowledge-link">Контакты</a></li>
+                <li class="nav__item"><a href="gallery.html" class="nav__link" id="knowledge-link">Галерея</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <section class="hero">
+                <h1 class="hero__title">📞 Контакты</h1>
+                <p class="hero__subtitle">Свяжитесь с нами любым удобным способом</p>
+            </section>
+
+            <div class="contacts-wrapper">
+                <!-- Контактная информация -->
+                <div class="contacts-info">
+                    <div class="contact-block">
+                        <h3>📧 Email</h3>
+                        <p>По вопросам сотрудничества:</p>
+                        <a href="mailto:info@jiu-jitsu.ru">kirilltencikov75@gmail.com</a>
+                        <p>По вопросам добавления клубов:</p>
+                        <a href="mailto:clubs@jiu-jitsu.ru">kirilltencikov75@gmail.com</a>
+                    </div>
+
+                    <div class="contact-block">
+                        <h3>📱 Социальные сети</h3>
+                        <div class="social-icons" id="social-icons"></div>
+                    </div>
+
+                    <div class="contact-block">
+                        <h3>📍 Адрес</h3>
+                        <p>г. Шелехов, 4-й микрорайон, 37</p>
+                        <p>Офис федерации джиу-джитсу России</p>
+                    </div>
+                </div>
+
+                <!-- Форма обратной связи -->
+                <div class="contact-form-wrapper">
+                    <h3>✉️ Напишите нам</h3>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form__group">
+                            <label for="contact-name">Ваше имя *</label>
+                            <input type="text" id="contact-name" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="contact-email">Email *</label>
+                            <input type="email" id="contact-email" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="contact-subject">Тема</label>
+                            <select id="contact-subject">
+                                <option value="question">Вопрос</option>
+                                <option value="club">Добавить клуб</option>
+                                <option value="cooperation">Сотрудничество</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label for="contact-message">Сообщение *</label>
+                            <textarea id="contact-message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+                    </form>
+                    <div id="contact-result" class="contact-result" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>Jiu-jitsu.ru — развитие джиу-джитсу в России</p>
+            <p>Теньчиков Кирилл, группа 02141</p>
+            <p>© 2026 Все права защищены</p>
+        </div>
+    </footer>
+
+    <!-- Подключаем JavaScript -->
+    <script src="js/theme.js"></script>
+    <script src="js/contacts.js"></script>
+</body>
+
+</html>
