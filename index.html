@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Jiu-jitsu.ru — Джиу-джитсу в России</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥋</text></svg>">
+    
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/light-theme.css" id="theme-style">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <span class="logo__icon">🥋</span>
+                <span class="logo__text">Jiu-jitsu.ru</span>
+            </div>
+            
+            <!-- Кнопка переключения темы -->
+            <button class="theme-toggle" id="theme-toggle" aria-label="Сменить тему">
+                🌙
+            </button>
+        </div>
+    </header>
+
+    <!-- Навигация -->
+    <nav class="nav">
+        <div class="container nav__container">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Главная</a></li>
+                <li class="nav__item"><a href="clubs.html" class="nav__link" id="clubs-link">Клубы</a></li>
+                <li class="nav__item"><a href="tournaments.html" class="nav__link" id="tournaments-link">Турниры</a></li>
+                <li class="nav__item"><a href="knowledge.html" class="nav__link" id="knowledge-link">База знаний</a></li>
+                <li class="nav__item"><a href="contacts.html" class="nav__link" id="knowledge-link">Контакты</a></li>
+                <li class="nav__item"><a href="gallery.html" class="nav__link" id="knowledge-link">Галерея</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="main">
+        <div class="container">
+            
+            <!-- Герой-секция -->
+            <section class="hero">
+                <h1 class="hero__title">Джиу-джитсу в России</h1>
+                <p class="hero__subtitle">Развитие бразильского джиу-джитсу: от новичка до чёрного пояса</p>
+                <a href="clubs.html" class="btn btn-primary">Найти клуб рядом →</a>
+            </section>
+
+            <!-- Секция: Топ-новость -->
+            <section class="section">
+                <h2 class="section__title">🔥 Топ-новость</h2>
+                <div class="news-card">
+                    <h3 class="news-card__title">16 медалей завоевали наши спортсмены на Чемпионате мира по контактному джиу-джитсу в Турции.</h3>
+                    <p class="news-card__date">18 мая 2026</p>
+                    <p class="news-card__content">⚪🔵🔴Сборная команда России расположилась на четвёртом месте в общем медальном зачёте. Эта дисциплина в нашей стране только набирает обороты, поэтому к следующему старту мы будем ещё мощнее и увереннее</p>
+                    <a href="https://vk.com/wall-172715980_1384" target="_blank" class="btn btn-outline news-links">Подробнее</a>
+                </div>
+            </section>
+
+            <!-- Секция: Ближайшие турниры -->
+            <section class="section">
+                <h2 class="section__title">📅 Ближайшие турниры</h2>
+                <div class="tournaments-grid" id="tournaments-container">
+                    <!-- Турниры загружаются через JS -->
+                    <div class="tournament-card">
+                        <h3>Открытый кубок Москвы</h3>
+                        <p>📅 10 июня 2026</p>
+                        <p>📍 Москва, СК "Динамо"</p>
+                        <a href="tournaments.html" class="btn btn-outline tournament-reg-btn">Регистрация</a>
+                    </div>
+                    <div class="tournament-card">
+                        <h3>Сибирский гран-при</h3>
+                        <p>📅 25 июня 2026</p>
+                        <p>📍 Новосибирск, Арена</p>
+                        <a href="tournaments.html" class="btn btn-outline tournament-reg-btn">Регистрация</a>
+                    </div>
+                    <div class="tournament-card">
+                        <h3>Кубок Санкт-Петербурга</h3>
+                        <p>📅 5 июля 2026</p>
+                        <p>📍 СПб, ДС "Юбилейный"</p>
+                        <a href="tournaments.html" class="btn btn-outline tournament-reg-btn">Регистрация</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section__title">🏆 Клуб месяца</h2>
+                <div class="club-month">
+                    <div class="club-month__info">
+                        <h3>GOJIRA JJ</h3>
+                        <p>📍 Ленинградское шоссе, 25А, стр. 1</p>
+                        <p>⭐ 5.0 на основе 250 отзывов</p>
+                        <p>👨‍🏫 Тренеры: Гиорги Размадзе, Джимми Размадзе</p>
+                         <a href="https://gojirajj.ru" class="btn btn-primary" id="club-details-btn" >Подробнее о клубе
+                         </a>
+                    </div>
+                    <div class="club-month__video">
+                        <iframe src="https://rutube.ru/play/embed/6df8fda59e35eb39aa203dd88e1d2b4a/" 
+                                title="Интервью с тренером"
+                                frameborder="0"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen>
+                        </iframe>
+                        <p class="video-caption">Интервью с тренером клуба месяца</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция: JS-приложение 3 (новости с API) -->
+            <section class="section">
+                <h2 class="section__title">📰 Новости джиу-джитсу</h2>
+                <button class="btn btn-primary" id="load-news-btn">Загрузить свежие новости</button>
+                <div id="news-container" class="news-grid">
+                    <div class="info-message">Нажмите на кнопку, чтобы загрузить новости</div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>Jiu-jitsu.ru — развитие джиу-джитсу в России</p>
+            <p>Теньчиков Кирилл, группа 02141</p>
+            <p>© 2026 Все права защищены</p>
+        </div>
+    </footer>
+
+    <!-- Подключаем JavaScript -->
+    <script src="js/theme.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/app1.js"></script>
+    <script src="js/app2.js"></script>
+    <script src="js/app3.js"></script>
+</body>
+</html>
